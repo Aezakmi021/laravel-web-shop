@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -22,5 +22,8 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
+
+Route::delete('/products', [\App\Livewire\ProductsList::class, 'delete'])->name('products.delete');
+Route::view('products', 'products')->name('products');
 
 require __DIR__.'/auth.php';

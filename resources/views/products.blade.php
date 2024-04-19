@@ -3,5 +3,5 @@
         <livewire:welcome.navigation />
     @endif
 
-    <livewire:product-form />
+    <livewire:products-list/>
 </x-guest-layout>
