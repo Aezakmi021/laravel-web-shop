@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,5 @@ Route::view('profile', 'profile')
 
 Route::delete('/products', [\App\Livewire\ProductsList::class, 'delete'])->name('products.delete');
 Route::view('products', 'products')->name('products');
-
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 require __DIR__.'/auth.php';
